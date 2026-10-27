@@ -1,0 +1,646 @@
+/* Rongin Luxury Store Design System */
+
+:root {
+  --primary-navy: #0e1a2b;
+  --secondary-navy: #15243b;
+  --dark-navy: #08101a;
+
+  --gold-primary: #d4af37;
+  --gold-light: #f3dc8d;
+  --gold-dark: #b08a1c;
+  --gold-gradient: linear-gradient(135deg, #fae29c 0%, #d4af37 50%, #a87e14 100%);
+  --gold-soft-bg: rgba(212, 175, 55, 0.12);
+  --gold-border: rgba(212, 175, 55, 0.3);
+
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border-subtle: #e2e8f0;
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
+  --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.25);
+
+  --font-serif: 'Red Rose', cursive, sans-serif;
+  --font-heading: 'Red Rose', cursive, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Strict Typography System: Red Rose for Headings & Titles, Plus Jakarta Sans for Body & Buttons */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.font-serif,
+.brand-title,
+.font-heading {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.01em;
+}
+
+button,
+input,
+select,
+textarea,
+nav,
+.btn,
+.btn-gold,
+.btn-primary,
+.btn-secondary,
+p,
+span,
+li,
+label,
+a {
+  font-family: var(--font-body);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-gold {
+  color: var(--gold-primary);
+}
+
+.gold-gradient-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Container - Consistent 1420px across the entire store */
+.container {
+  width: 100%;
+  max-width: 1420px !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@keyframes megaMenuSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mega-menu-dropdown {
+  animation: megaMenuSlide 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Buttons: Base #071A33 and Hover #123E78 with 50px Rounded Pill Style */
+.btn-gold {
+  background: #071A33;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 50px !important;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(7, 26, 51, 0.25);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-gold:hover {
+  background: #123E78;
+  color: #ffffff;
+  border-color: #d4af37;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(18, 62, 120, 0.4);
+}
+
+.btn-outline-gold {
+  background: #071A33;
+  color: #ffffff;
+  border: 1.5px solid #071A33;
+  font-weight: 600;
+  padding: 11px 24px;
+  border-radius: 50px !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-outline-gold:hover {
+  background: #123E78;
+  border-color: #123E78;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-navy {
+  background: #071A33;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 50px !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-navy:hover {
+  background: #123E78;
+  color: #ffffff;
+  border-color: #d4af37;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(18, 62, 120, 0.4);
+}
+
+/* Global 50px Border Radius on all CTA buttons & actions */
+.btn-gold,
+.btn-outline-gold,
+.btn-navy,
+.btn-primary,
+.btn-secondary,
+.cta-button,
+.cta-btn,
+button.cta-btn,
+a.cta-btn,
+button[type="submit"].btn-gold,
+.product-card button,
+.product-card .btn-gold {
+  border-radius: 50px !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+.animate-slide-cart {
+  animation: slideLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Section titles */
+.section-subtitle {
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--primary-navy);
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .section-title {
+    font-size: 1.55rem !important;
+  }
+
+  .section-subtitle {
+    font-size: 0.75rem !important;
+    letter-spacing: 1.5px !important;
+  }
+}
+
+/* ========================================================
+   COMPREHENSIVE MOBILE RESPONSIVE SYSTEM
+   ======================================================== */
+
+/* Mobile Bottom Navigation Bar */
+@media (max-width: 768px) {
+  .mobile-bottom-bar {
+    display: flex !important;
+  }
+
+  body,
+  main {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* 1. Global Footer Responsiveness */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    padding-top: 36px !important;
+    padding-bottom: 75px !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .footer-badges {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+}
+
+/* 2. Contact Page Responsiveness */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .contact-page section {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-page {
+    padding-bottom: 0 !important;
+  }
+
+  .contact-main-section {
+    padding: 24px 10px 16px 10px !important;
+  }
+
+  .contact-grid > div > div {
+    padding: 18px 14px !important;
+  }
+}
+
+/* 3. About Page Responsiveness */
+@media (max-width: 900px) {
+  .about-story-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 20px 16px !important;
+  }
+
+  .about-store-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 20px 16px !important;
+  }
+
+  .about-story-badge {
+    position: static !important;
+    margin-top: 14px !important;
+  }
+
+  .about-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-page {
+    padding-bottom: 0 !important;
+  }
+
+  .about-story-grid img {
+    height: 220px !important;
+  }
+
+  .about-store-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 16px 12px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .about-store-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+
+  .about-action-btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  .about-contact-card {
+    padding: 18px 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+}
+
+/* 4. Cart Page Responsiveness */
+@media (max-width: 900px) {
+  .cart-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .cart-page {
+    padding: 16px 12px 24px 12px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cart-item-row {
+    display: grid !important;
+    grid-template-columns: 65px 1fr auto !important;
+    grid-template-rows: auto auto !important;
+    gap: 10px 12px !important;
+    padding: 14px !important;
+    position: relative !important;
+  }
+
+  .cart-item-img {
+    grid-row: 1 / span 2 !important;
+    width: 65px !important;
+    height: 65px !important;
+  }
+
+  .cart-item-info {
+    grid-column: 2 / 3 !important;
+  }
+
+  .cart-item-info h4 {
+    font-size: 0.9rem !important;
+  }
+
+  .cart-item-delete {
+    grid-column: 3 / 4 !important;
+    align-self: start !important;
+  }
+
+  .cart-item-qty {
+    grid-column: 2 / 3 !important;
+    width: fit-content !important;
+  }
+
+  .cart-item-total {
+    grid-column: 3 / 4 !important;
+    font-size: 0.95rem !important;
+    text-align: right !important;
+    align-self: center !important;
+  }
+}
+
+/* 5. Checkout Page Responsiveness */
+@media (max-width: 900px) {
+  .checkout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .checkout-page {
+    padding: 20px 14px 100px 14px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .checkout-grid>div {
+    padding: 20px 16px !important;
+  }
+
+  .checkout-page h1 {
+    font-size: 1.6rem !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* 6. Product Details Page Responsiveness */
+@media (max-width: 900px) {
+  .product-details-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 20px 16px !important;
+  }
+
+  .product-details-page {
+    padding: 16px 12px 24px 12px !important;
+  }
+}
+
+/* 7. Products Catalog Page Responsiveness */
+@media (max-width: 640px) {
+  .products-catalog-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .products-page {
+    padding-bottom: 16px !important;
+  }
+}
+
+/* 8. Collections Page Responsiveness */
+@media (max-width: 640px) {
+  .collections-page-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .collections-page-grid .collection-card {
+    height: 180px !important;
+  }
+
+  .collections-page {
+    padding-bottom: 16px !important;
+  }
+}
+
+/* 9. Admin Dashboard Responsiveness */
+@media (max-width: 768px) {
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 14px !important;
+  }
+}
+
+/* 10. General Viewport Overflow Prevention */
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* 11. Hide Netlify Floating Badge Permanently */
+button#nl-badge,
+#nl-badge,
+[id*="nl-badge"],
+[class*="netlify-badge"],
+div[style*="z-index: 2147483647"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  clip: rect(0, 0, 0, 0) !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+/* 12. Compact Mobile Section Spacing & Padding */
+@media (max-width: 768px) {
+
+  /* Reduce all homepage and general section padding */
+  section {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  #hero {
+    padding-top: 14px !important;
+    padding-bottom: 22px !important;
+  }
+
+  #categories,
+  #featured,
+  #trending,
+  #about,
+  #reviews,
+  #mens-collection,
+  #womens-collection {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  /* Section title and headers */
+  .section-title {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .section-subtitle {
+    font-size: 0.72rem !important;
+    letter-spacing: 1px !important;
+  }
+
+  /* Reduce margin below section headers */
+  section .container>div:first-child[style*="marginBottom"],
+  section .container>div:first-child[style*="margin-bottom"] {
+    margin-bottom: 20px !important;
+  }
+
+  footer {
+    padding-top: 36px !important;
+  }
+}
